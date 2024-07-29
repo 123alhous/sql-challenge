@@ -36,8 +36,8 @@ select * from departments;
 
 -- Create department employee table
 create table dept_emp (
-	emp_no INT NOT NULL, -- emp_no is not unique in dept_no table
-	dept_no VARCHAR(8) NOT NULL, -- dept_no is not unique in dept_no table
+	emp_no INT NOT NULL, -- emp_no is not unique in employees table
+	dept_no VARCHAR(8) NOT NULL, -- dept_no is not unique in departments table
     foreign key (emp_no) references employees (emp_no),
     foreign key (dept_no) references departments (dept_no)
 );
@@ -46,8 +46,8 @@ select * from dept_emp;
 
 -- Create Department manager table
 create table dept_manager (
-	dept_no VARCHAR(8) NOT NULL, -- emp_no is not unique in dept_no table
-	emp_no INT NOT NULL, -- dept_no is not unique in dept_no table
+	dept_no VARCHAR(8) NOT NULL, -- emp_no is not unique in departments table
+	emp_no INT NOT NULL, -- dept_no is not unique in employees table
 	foreign key (dept_no) references departments (dept_no),
     foreign key (emp_no) references employees (emp_no)
     
