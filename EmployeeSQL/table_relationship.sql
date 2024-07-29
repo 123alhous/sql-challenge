@@ -40,7 +40,7 @@ create table dept_emp (
 	dept_no VARCHAR(8) NOT NULL, -- dept_no is not unique in departments table
     foreign key (emp_no) references employees (emp_no),
     foreign key (dept_no) references departments (dept_no),
-    primary key (dept_no, emp_no) 
+    primary key (dept_no, emp_no)  -- composite key
 );
 
 select * from dept_emp;
@@ -51,7 +51,7 @@ create table dept_manager (
 	emp_no INT NOT NULL, -- dept_no is not unique in employees table
 	foreign key (dept_no) references departments (dept_no),
     foreign key (emp_no) references employees (emp_no),
-    primary key (dept_no, emp_no)  
+    primary key (dept_no, emp_no)  -- composite key
 );
 select * from dept_manager;
 
