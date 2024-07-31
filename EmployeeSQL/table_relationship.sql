@@ -33,35 +33,26 @@ create table departments (
 );
 select * from departments;
 
-
 -- Create department employee table
 create table dept_emp (
-	emp_no INT NOT NULL, -- emp_no is not unique in employees table
-	dept_no VARCHAR(8) NOT NULL, -- dept_no is not unique in departments table
+	emp_no INT NOT NULL, 
+	dept_no VARCHAR(8) NOT NULL,
     foreign key (emp_no) references employees (emp_no),
     foreign key (dept_no) references departments (dept_no),
-<<<<<<< HEAD
-	primary key (emp_no, dept_no)
-=======
-    primary key (dept_no, emp_no)  -- composite key
->>>>>>> a80f78b4c50d409697771211f5cfd3704c257eda
+    primary key (dept_no, emp_no) 
 );
 
 select * from dept_emp;
 
 -- Create Department manager table
 create table dept_manager (
-	dept_no VARCHAR(8) NOT NULL, -- emp_no is not unique in departments table
-	emp_no INT NOT NULL, -- dept_no is not unique in employees table
+	dept_no VARCHAR(8) NOT NULL, 
+	emp_no INT NOT NULL, 
 	foreign key (dept_no) references departments (dept_no),
-<<<<<<< HEAD
     foreign key (emp_no) references employees (emp_no) ,
-	primary key (dept_no, emp_no)  
-=======
-    foreign key (emp_no) references employees (emp_no),
-    primary key (dept_no, emp_no)  -- composite key
->>>>>>> a80f78b4c50d409697771211f5cfd3704c257eda
+    primary key (dept_no, emp_no)  
 );
+
 select * from dept_manager;
 
 -- Create salaries table
